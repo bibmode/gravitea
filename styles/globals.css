@@ -1,9 +1,19 @@
+:root {
+  --black: #333333;
+  --white: #ffffff;
+  --gray: #e6e7e8;
+  --primary: #dd21ed;
+  --secondary: #7faa3c;
+  --pink: #dbb4de;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Sora", sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
 }
 
 a {
@@ -13,4 +23,9 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  word-wrap: break-word;
+  line-height: 1.8;
+  color: var(--black);
 }

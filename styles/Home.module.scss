@@ -1,0 +1,15 @@
+.main {
+  min-height: 100vh;
+  width: 100vw;
+
+  footer {
+    padding-block: 15px;
+    border-top: 1px solid var(--gray);
+    p {
+      font-weight: 300;
+      font-size: 12px;
+
+      text-align: center;
+    }
+  }
+}

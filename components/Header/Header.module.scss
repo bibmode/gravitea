@@ -1,0 +1,98 @@
+.wrapper {
+  background-color: #fff;
+
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.container {
+  padding-inline: clamp(10px, 7vw, 100px);
+  position: absolute;
+  z-index: 1000;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  width: 100%;
+}
+
+.title {
+  width: 322px;
+  height: 322px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30%;
+  position: relative;
+
+  &Blob {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #e768f2 0%,
+      rgba(231, 104, 242, 0) 100%
+    );
+    z-index: -1;
+  }
+
+  &Ellipse {
+    width: 80%;
+  }
+
+  h1 {
+    position: absolute;
+    font-weight: 800;
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-shadow: -1px 0 var(--white), 0 1px var(--white), 1px 0 var(--white),
+      0 -1px var(--white);
+    z-index: 10;
+  }
+}
+
+.downBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15vh;
+
+  &Button {
+    background-color: transparent;
+    border: 2px solid var(--black);
+    outline: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 69px;
+    height: 69px;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      border: 2px solid var(--primary);
+    }
+
+    &:hover > svg > g {
+      stroke: var(--primary) !important;
+    }
+  }
+
+  &Icon {
+    font-size: 30px;
+
+    g {
+      transition: all 0.2s;
+    }
+  }
+}

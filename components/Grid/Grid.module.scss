@@ -1,0 +1,33 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow: hidden;
+}
+
+.horizontal {
+  position: absolute;
+  z-index: 1;
+
+  &Line {
+    width: 100vw;
+    height: 1px;
+    background-color: var(--gray);
+    margin-top: 65px;
+  }
+}
+
+.vertical {
+  position: absolute;
+  display: flex;
+  overflow-x: hidden;
+
+  z-index: 1000;
+
+  &Line {
+    height: 100vh;
+    width: 1px;
+    margin-left: 65px;
+    background-color: var(--gray);
+  }
+}

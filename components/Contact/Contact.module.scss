@@ -1,0 +1,80 @@
+.container {
+  padding-inline: clamp(10px, 7vw, 100px);
+  padding-block: 55px;
+
+  h1 {
+    font-weight: 800;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+
+  h2 {
+    margin-block: 25px;
+  }
+
+  h2,
+  h4 {
+    text-transform: uppercase;
+  }
+
+  h2,
+  h3 {
+    font-weight: 700;
+    font-size: 11px;
+  }
+
+  h4 {
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  h5 {
+    font-family: "EB Garamond";
+    font-style: normal;
+    text-align: right;
+    font-weight: 800;
+    font-size: 36px;
+  }
+}
+
+.schedule {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactLines {
+  margin-block: 25px 35px;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "text1 ."
+    "text2 social";
+
+  h3:first-of-type {
+    grid-area: text1;
+  }
+
+  h3:last-of-type {
+    grid-area: text2;
+  }
+
+  .social {
+    grid-area: social;
+    display: flex;
+
+    svg {
+      font-size: 18px;
+    }
+
+    svg:first-of-type {
+      margin-right: 10px;
+    }
+  }
+}
+
+.map {
+  width: 100%;
+  height: 422px;
+}
