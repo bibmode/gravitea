@@ -23,7 +23,7 @@ const Menu = () => {
             <th>L</th>
           </tr>
           <tr>
-            <td>mango cheesecake</td>
+            <td className={styles.tableName}>mango cheesecake</td>
             <td>P79</td>
             <td>P85</td>
           </tr>

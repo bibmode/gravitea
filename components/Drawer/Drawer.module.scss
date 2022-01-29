@@ -1,0 +1,92 @@
+.container {
+  background-color: var(--white);
+  width: 100vw;
+  height: 100vh;
+  padding-inline: clamp(10px, 7vw, 100px);
+  position: fixed;
+  z-index: 2000;
+  text-align: left;
+
+  h2 {
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    text-transform: uppercase;
+    width: 65%;
+    margin-bottom: 30px;
+
+    &:nth-of-type(2) {
+      word-spacing: 30px;
+    }
+  }
+
+  h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+.logo {
+  width: clamp(60px, 15vw, 124vw);
+  height: auto;
+  margin-left: -5px;
+}
+
+.nav {
+  padding-block: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close {
+  width: 42px;
+  height: 42px;
+  background-color: var(--primary);
+  display: grid;
+  place-items: center;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+
+  &Icon {
+    font-size: 26px;
+
+    path {
+      fill: var(--white);
+    }
+  }
+}
+
+.social {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40%;
+
+  &Button {
+    font-size: 24px;
+    margin-left: 18px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    height: 100%;
+  }
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  margin-block: 50px;
+
+  a {
+    text-transform: uppercase;
+    width: min-content;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+}

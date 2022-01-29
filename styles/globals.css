@@ -2,7 +2,7 @@
   --black: #333333;
   --white: #ffffff;
   --gray: #e6e7e8;
-  --primary: #dd21ed;
+  --primary: rgb(221, 33, 237);
   --secondary: #7faa3c;
   --pink: #dbb4de;
 }
@@ -28,4 +28,8 @@ a {
   word-wrap: break-word;
   line-height: 1.8;
   color: var(--black);
+}
+
+#tsparticles canvas {
+  position: absolute !important;
 }

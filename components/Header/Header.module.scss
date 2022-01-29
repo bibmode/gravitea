@@ -11,7 +11,7 @@
   position: absolute;
   z-index: 1000;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,13 +21,41 @@
   width: 100%;
 }
 
+.starIcon {
+  font-size: 21px;
+  position: absolute;
+
+  path {
+    fill: var(--black) !important;
+  }
+
+  &:first-of-type {
+    top: 18%;
+    left: 25%;
+
+    path {
+      fill: var(--primary) !important;
+    }
+  }
+
+  &:nth-of-type(2) {
+    bottom: 23%;
+    left: 10%;
+  }
+
+  &:nth-of-type(3) {
+    right: 15%;
+    top: 57%;
+  }
+}
+
 .title {
   width: 322px;
   height: 322px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30%;
+  margin-top: 200px;
   position: relative;
 
   &Blob {
@@ -40,6 +68,19 @@
       rgba(231, 104, 242, 0) 100%
     );
     z-index: -1;
+
+    // &::before {
+    //   content: "";
+    //   background-image: url("../../public/original.gif");
+    //   background-size: cover;
+    //   position: absolute;
+    //   // opacity: 0.2;
+    //   width: 100%;
+    //   height: 100%;
+    //   border-radius: 50%;
+    //   // box-shadow: 0 0 50px 50px transparent inset;
+    //   mix-blend-mode: soft-light;
+    // }
   }
 
   &Ellipse {
