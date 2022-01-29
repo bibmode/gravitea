@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import { createContext, useContext, useEffect, useState } from "react";
@@ -28,10 +29,10 @@ export default function Home() {
   useEffect(() => {
     if (drawer) {
       document.body.style.overflowY = "hidden";
-      document.body.style.position = "fixed";
+      // document.body.style.position = "fixed";
     } else {
       document.body.style.overflowY = "scroll";
-      document.body.style.position = "static";
+      // document.body.style.position = "static";
     }
   }, [drawer]);
 
@@ -57,8 +58,14 @@ export default function Home() {
     >
       <div>
         <div className={styles.main}>
-          {navBar && <NavBar />}
-          {drawer && <Drawer />}
+          <AnimatePresence>{navBar && <NavBar />}</AnimatePresence>
+          <AnimatePresence>{drawer && <Drawer />}</AnimatePresence>
+
+          <div
+            className={`${styles.overlay} ${
+              drawer ? styles.overlayDisplay : ""
+            }`}
+          />
           <Header />
           <About />
           <Menu />

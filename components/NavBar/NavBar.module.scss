@@ -2,19 +2,20 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-block: 30px;
   padding-inline: clamp(10px, 7vw, 100px);
   position: fixed;
   width: 100vw;
   z-index: 3000;
+  transition: all 0.8s;
 
   &Colored {
-    background-color: rgba(220, 33, 237, 0.397);
+    background-color: var(--white);
     padding-block: 10px;
   }
 
   &Transparent {
     background-color: transparent;
+    padding-block: 30px;
   }
 }
 

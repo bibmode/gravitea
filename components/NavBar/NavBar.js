@@ -3,6 +3,7 @@ import styles from "./NavBar.module.scss";
 
 import { AppContext } from "../../pages";
 import { useContext, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const NavBar = () => {
   const { setDrawer, currentScrollPos } = useContext(AppContext);
@@ -22,7 +23,11 @@ const NavBar = () => {
   }, []);
 
   return (
-    <div
+    <motion.div
+      initial={{ y: "-100%" }}
+      animate={{ y: "0" }}
+      exit={{ y: "-100%" }}
+      transition={{ ease: "easeIn" }}
       className={`${styles.wrapper} ${
         viewportHeight && currentScrollPos > viewportHeight
           ? styles.wrapperColored
@@ -45,7 +50,7 @@ const NavBar = () => {
         <div className={styles.line} />
         <div className={styles.line} />
       </label>
-    </div>
+    </motion.div>
   );
 };
 
