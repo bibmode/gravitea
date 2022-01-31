@@ -27,26 +27,30 @@ const About = () => {
 
       <div className={styles.milkshake}>
         <img src="milkshake-table.jpg" alt="milkshake on table" />
-        <h2>Where your cravings attracts satisfaction</h2>
-        <p>
-          <b>GraviTea</b>
-          {` brings out the unique vibe of milktea; a customizable menu of
+        <div className={styles.milkshakeDetails}>
+          <h2>Where your cravings attracts satisfaction</h2>
+          <p>
+            <b>GraviTea</b>
+            {` brings out the unique vibe of milktea; a customizable menu of
           drinks that surely attracts the customer's cravings. Along with its
           sweetness and its taste, GraviTea also offers different flavors that
           match customers' satisfaction. We also conforms to the patterns or
           trends which makes it change from time to time yet the uniqueness of
           this taste is still the same.`}
-        </p>
+          </p>
+        </div>
       </div>
 
-      <div className={styles.fruits}>
-        <img src="fruits.jpg" alt="fruits" />
+      <div className={styles.fruitsContainer}>
+        <div className={styles.fruits}>
+          <img src="fruits.jpg" alt="fruits" />
 
-        <p>
-          All of our teas are made with good quality powders, sweet toppings,
-          and with real fruits that catch the eyes and attract the taste of the
-          customers.{" "}
-        </p>
+          <p>
+            All of our teas are made with good quality powders, sweet toppings,
+            and with real fruits that catch the eyes and attract the taste of
+            the customers.{" "}
+          </p>
+        </div>
       </div>
 
       <div className={styles.facts}>

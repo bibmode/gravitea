@@ -1,0 +1,44 @@
+.wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // background-color: cornflowerblue;
+}
+
+.top {
+  position: absolute;
+  top: -358px;
+  // left: 5px;
+  transform: scale(1.01) rotate(0.3deg) translateX(-1px);
+  z-index: 7003;
+}
+
+.front {
+  position: absolute;
+  transform: translateX(20px);
+  // background-color: #6494ed85;
+  z-index: 7002;
+}
+
+.back {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  transform: rotate(0.4deg) translateX(18px);
+  top: 5px;
+  // background-color: chartreuse;
+  z-index: 7000;
+}
+
+// .blob {
+//   width: 856px;
+//   height: 856px;
+//   background: radial-gradient(
+//     45.55% 45.55% at 50% 50%,
+//     #e486ec 0%,
+//     rgba(220, 71, 233, 0) 100%
+//   );
+//   backdrop-filter: blur(5px);
+// }

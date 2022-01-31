@@ -3,12 +3,12 @@
 
   height: 100vh;
   width: 100vw;
-  position: relative;
+  // position: relative;
 }
 
 .container {
   padding-inline: clamp(10px, 7vw, 100px);
-  position: absolute;
+  position: relative;
   z-index: 1000;
   width: 100vw;
   height: 100vh;
@@ -19,6 +19,31 @@
 
 .nav {
   width: 100%;
+}
+
+.social {
+  font-size: 36px;
+  margin-right: clamp(10px, 7vw, 100px);
+  transform: translateX(25px);
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+
+  top: 150px;
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 5000;
+
+  a {
+    padding-right: 20px;
+
+    &:first-of-type {
+      padding-left: 10px;
+    }
+  }
 }
 
 .starIcon {
@@ -49,7 +74,7 @@
   }
 }
 
-.title {
+.title1 {
   width: 322px;
   height: 322px;
   display: flex;
@@ -57,6 +82,10 @@
   justify-content: center;
   margin-top: 200px;
   position: relative;
+
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
 
   &Blob {
     width: 100%;
@@ -100,12 +129,115 @@
   }
 }
 
+.title2 {
+  position: absolute;
+  top: 35%;
+  right: 0;
+  margin-right: var(--spacing);
+  text-align: right;
+
+  h1 {
+    font-weight: 800;
+    font-size: clamp(70px, 6vw, 208px);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  &Items {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 150px;
+      height: 11px;
+      background-color: var(--black);
+      border-radius: 60%;
+    }
+
+    &::before {
+      top: -15px;
+    }
+
+    &::after {
+      bottom: -15px;
+    }
+
+    p {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 23px;
+      text-align: right;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  &Details {
+    width: 110%;
+    position: absolute;
+    right: 0;
+    margin-top: 120px;
+    color: var(--primary);
+
+    b {
+      color: inherit;
+    }
+  }
+}
+
+.milkshake {
+  position: absolute;
+  top: 315px;
+  left: 13%;
+  // z-index: 5000;
+  transform: rotate(-10deg) scale(0.9);
+  height: 80vh;
+  width: fit-content;
+
+  &Blob {
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(
+      45.55% 45.55% at 50% 50%,
+      #e486ec 0%,
+      rgba(220, 71, 233, 0) 100%
+    );
+    transform: translate(-30%, -35%);
+    z-index: 1;
+    // opacity: 0;
+  }
+}
+
+.hours {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  padding-left: clamp(10px, 7vw, 100px);
+
+  h3 {
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+  h4 {
+    font-family: "EB Garamond";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 1;
+  }
+}
+
 .downBtn {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 15vh;
+  position: absolute;
+  bottom: 8vh;
 
   &Button {
     background-color: transparent;

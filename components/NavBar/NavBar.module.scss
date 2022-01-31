@@ -6,7 +6,7 @@
   position: fixed;
   width: 100vw;
   z-index: 3000;
-  transition: all 0.8s;
+  transition: all 0.5s;
 
   &Colored {
     background-color: var(--white);
@@ -20,7 +20,7 @@
 }
 
 .logo {
-  width: clamp(60px, 15vw, 124vw);
+  width: clamp(60px, 15vw, 124px);
   height: auto;
   margin-left: -5px;
 }
@@ -36,6 +36,7 @@ input:checked ~ .navBtn {
       width: 0;
     }
     &:nth-of-type(3) {
+      width: 100%;
       transform: rotate(45deg);
       // background-color: var(--white);
       transform-origin: bottom right;
@@ -56,6 +57,10 @@ input:checked ~ .navBtn {
   cursor: pointer;
   margin-top: 15px;
 
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+
   .line {
     width: 100%;
     height: 5px;
@@ -63,12 +68,41 @@ input:checked ~ .navBtn {
     background-color: var(--black);
     transition: all 0.2s;
 
-    // &:last-child {
-    //   width: 60%;
-    // }
+    &:last-child {
+      width: 60%;
+    }
   }
 
   // &:hover .line {
   //   width: 100%;
   // }
+}
+
+.navOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 600;
+    transform: translateX(20px);
+    li {
+      margin-left: 50px;
+    }
+  }
+
+  &Star {
+    font-size: clamp(64px, 15vw, 80px);
+    line-height: 0.5;
+  }
 }

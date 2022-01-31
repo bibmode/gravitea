@@ -21,11 +21,18 @@ const Contact = () => {
       </div>
 
       <div className={styles.contactLines}>
-        <h3>+63 939 388 1120</h3>
-        <h3>gravitea_official@gmail.com</h3>
+        <div>
+          <h3>+63 939 388 1120</h3>
+          <h3>gravitea_official@gmail.com</h3>
+        </div>
+
         <div className={styles.social}>
-          <Icon icon="brandico:facebook" />
-          <Icon icon="cib:instagram" />
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <Icon icon="brandico:facebook" />
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <Icon className={styles.socialInstagram} icon="cib:instagram" />
+          </a>
         </div>
       </div>
 

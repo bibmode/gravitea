@@ -1,16 +1,30 @@
 .container {
-  padding-inline: clamp(10px, 7vw, 100px);
-  padding-block: 55px;
+  margin-inline: clamp(10px, 7vw, 100px);
+  padding-block: 55px 100px;
+  position: relative;
 
   h1 {
     font-weight: 800;
     font-size: 24px;
     text-transform: uppercase;
     color: var(--primary);
+
+    @media only screen and (min-width: 900px) {
+      font-size: 48px;
+      position: absolute;
+      right: 0;
+    }
   }
 
   h2 {
     margin-block: 25px;
+    max-width: 380px;
+
+    @media only screen and (min-width: 900px) {
+      font-weight: normal !important;
+      font-size: 14px !important;
+      line-height: 18px !important;
+    }
   }
 
   h2,
@@ -24,9 +38,17 @@
     font-size: 11px;
   }
 
+  h2 {
+    margin-block: 72px 20px;
+  }
+
   h4 {
     font-weight: 400;
     font-size: 12px;
+
+    @media only screen and (min-width: 900px) {
+      font-size: 18px;
+    }
   }
 
   h5 {
@@ -35,12 +57,26 @@
     text-align: right;
     font-weight: 800;
     font-size: 36px;
+
+    @media only screen and (min-width: 900px) {
+      position: absolute;
+      right: 0;
+      bottom: 100px;
+      line-height: 1;
+    }
   }
 }
 
 .schedule {
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (min-width: 900px) {
+    width: 265px;
+    position: absolute;
+    right: 0;
+    top: 15%;
+  }
 }
 
 .contactLines {
@@ -52,29 +88,62 @@
     "text1 ."
     "text2 social";
 
+  @media only screen and (min-width: 900px) {
+    width: fit-content;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: 15%;
+  }
+
+  h3 {
+    @media only screen and (min-width: 900px) {
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+
   h3:first-of-type {
     grid-area: text1;
   }
 
   h3:last-of-type {
     grid-area: text2;
+
+    @media only screen and (min-width: 900px) {
+      text-decoration: underline;
+    }
   }
 
   .social {
     grid-area: social;
     display: flex;
 
-    svg {
-      font-size: 18px;
+    @media only screen and (min-width: 900px) {
+      flex-direction: column;
+      align-self: flex-end;
+      align-items: center;
+      margin-bottom: 30px;
     }
 
-    svg:first-of-type {
-      margin-right: 10px;
+    &Instagram {
+      margin-left: 10px;
+      margin-top: 5px;
+
+      @media only screen and (min-width: 900px) {
+        margin-left: 0;
+      }
     }
   }
 }
 
 .map {
-  width: 100%;
+  width: min(100%, 522px);
   height: 422px;
+
+  @media only screen and (min-width: 900px) {
+    height: 685px;
+  }
 }

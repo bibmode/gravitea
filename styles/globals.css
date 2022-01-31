@@ -4,7 +4,12 @@
   --gray: #e6e7e8;
   --primary: rgb(221, 33, 237);
   --secondary: #7faa3c;
-  --pink: #dbb4de;
+  --pink: rgb(219, 180, 222);
+
+  --spacing: clamp(10px, 7vw, 100px);
+
+  /* media breaks */
+  --desktop: 900px;
 }
 
 html,
@@ -16,6 +21,9 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  overflow-y: visible !important;
+}
 a {
   color: inherit;
   text-decoration: none;

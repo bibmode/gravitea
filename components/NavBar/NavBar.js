@@ -4,22 +4,20 @@ import styles from "./NavBar.module.scss";
 import { AppContext } from "../../pages";
 import { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Icon } from "@iconify/react";
 
 const NavBar = () => {
   const { setDrawer, currentScrollPos } = useContext(AppContext);
   const [viewportHeight, setViewportHeight] = useState(null);
+  const [viewportWidth, setViewportWidth] = useState(null);
 
   const handleChange = (e) => {
-    console.log(e.target.checked);
     setDrawer(e.target.checked);
   };
 
   useEffect(() => {
-    console.log(currentScrollPos);
-  }, [currentScrollPos]);
-
-  useEffect(() => {
     setViewportHeight(window.innerHeight);
+    setViewportWidth(window.innerWidth);
   }, []);
 
   return (
@@ -50,6 +48,23 @@ const NavBar = () => {
         <div className={styles.line} />
         <div className={styles.line} />
       </label>
+
+      <div className={styles.navOptions}>
+        <ul>
+          <li>
+            <a href="#">about</a>
+          </li>
+          <li>
+            <a href="#">menu</a>
+          </li>
+          <li>
+            <a href="#">contact</a>
+          </li>
+          <li className={styles.navOptionsStar}>
+            <Icon icon="emojione:eight-pointed-star" />
+          </li>
+        </ul>
+      </div>
     </motion.div>
   );
 };
