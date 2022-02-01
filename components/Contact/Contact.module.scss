@@ -1,7 +1,14 @@
 .container {
-  margin-inline: clamp(10px, 7vw, 100px);
+  margin-inline: var(--spacing);
   padding-block: 55px 100px;
-  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &2 {
+    position: relative;
+    width: 100%;
+    max-width: var(--maxWidth);
+  }
 
   h1 {
     font-weight: 800;
@@ -61,7 +68,7 @@
     @media only screen and (min-width: 900px) {
       position: absolute;
       right: 0;
-      bottom: 100px;
+      bottom: 0;
       line-height: 1;
     }
   }
@@ -75,7 +82,7 @@
     width: 265px;
     position: absolute;
     right: 0;
-    top: 15%;
+    top: 10%;
   }
 }
 
@@ -95,7 +102,7 @@
     text-align: right;
     position: absolute;
     right: 0;
-    bottom: 15%;
+    bottom: 8%;
   }
 
   h3 {

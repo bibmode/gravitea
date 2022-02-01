@@ -6,7 +6,8 @@
   --secondary: #7faa3c;
   --pink: rgb(219, 180, 222);
 
-  --spacing: clamp(10px, 7vw, 100px);
+  --spacing: clamp(10px, 7vw, 25vw);
+  --maxWidth: 2000px;
 
   /* media breaks */
   --desktop: 900px;

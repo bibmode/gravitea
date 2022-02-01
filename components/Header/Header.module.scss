@@ -4,17 +4,27 @@
   height: 100vh;
   width: 100vw;
   // position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
-  padding-inline: clamp(10px, 7vw, 100px);
+  width: 100%;
+  max-width: var(--maxWidth);
+  height: 100vh;
   position: relative;
   z-index: 1000;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
+  &2 {
+    padding-inline: var(--spacing);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .nav {
@@ -23,7 +33,7 @@
 
 .social {
   font-size: 36px;
-  margin-right: clamp(10px, 7vw, 100px);
+  margin-right: var(--spacing);
   transform: translateX(25px);
 
   @media only screen and (max-width: 768px) {
@@ -214,7 +224,7 @@
   position: absolute;
   bottom: 100px;
   left: 0;
-  padding-left: clamp(10px, 7vw, 100px);
+  padding-left: var(--spacing);
 
   h3 {
     font-weight: bold;

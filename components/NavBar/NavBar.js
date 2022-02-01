@@ -33,37 +33,39 @@ const NavBar = () => {
       }`}
       id="navbar"
     >
-      <img src="Logo.png" alt="gravitea logo" className={styles.logo} />
-      {/* onClick={() => setDrawer(true)} */}
+      <div className={styles.wrapper2}>
+        <img src="Logo.png" alt="gravitea logo" className={styles.logo} />
+        {/* onClick={() => setDrawer(true)} */}
 
-      <input
-        className={styles.input}
-        type="checkbox"
-        id="navBtn"
-        onChange={handleChange}
-        hidden
-      />
-      <label htmlFor="navBtn" className={styles.navBtn}>
-        <div className={styles.line} />
-        <div className={styles.line} />
-        <div className={styles.line} />
-      </label>
+        <input
+          className={styles.input}
+          type="checkbox"
+          id="navBtn"
+          onChange={handleChange}
+          hidden
+        />
+        <label htmlFor="navBtn" className={styles.navBtn}>
+          <div className={styles.line} />
+          <div className={styles.line} />
+          <div className={styles.line} />
+        </label>
 
-      <div className={styles.navOptions}>
-        <ul>
-          <li>
-            <a href="#">about</a>
-          </li>
-          <li>
-            <a href="#">menu</a>
-          </li>
-          <li>
-            <a href="#">contact</a>
-          </li>
-          <li className={styles.navOptionsStar}>
-            <Icon icon="emojione:eight-pointed-star" />
-          </li>
-        </ul>
+        <div className={styles.navOptions}>
+          <ul>
+            <li>
+              <a href="#">about</a>
+            </li>
+            <li>
+              <a href="#">menu</a>
+            </li>
+            <li>
+              <a href="#">contact</a>
+            </li>
+            <li className={styles.navOptionsStar}>
+              <Icon icon="emojione:eight-pointed-star" />
+            </li>
+          </ul>
+        </div>
       </div>
     </motion.div>
   );

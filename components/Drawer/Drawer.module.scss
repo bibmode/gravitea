@@ -2,7 +2,7 @@
   background-color: var(--white);
   width: 100vw;
   height: 100vh;
-  padding-inline: clamp(10px, 7vw, 100px);
+  padding-inline: var(--spacing);
   position: fixed;
   z-index: 2000;
   text-align: left;

@@ -1,5 +1,5 @@
 .container {
-  padding-inline: clamp(10px, 7vw, 100px);
+  padding-inline: var(--spacing);
   position: relative;
 
   img {
