@@ -9,7 +9,6 @@ import { Icon } from "@iconify/react";
 const NavBar = () => {
   const { setDrawer, currentScrollPos } = useContext(AppContext);
   const [viewportHeight, setViewportHeight] = useState(null);
-  const [viewportWidth, setViewportWidth] = useState(null);
 
   const handleChange = (e) => {
     setDrawer(e.target.checked);
@@ -17,7 +16,6 @@ const NavBar = () => {
 
   useEffect(() => {
     setViewportHeight(window.innerHeight);
-    setViewportWidth(window.innerWidth);
   }, []);
 
   return (
@@ -61,10 +59,20 @@ const NavBar = () => {
             <li>
               <a href="#">contact</a>
             </li>
+
             <li className={styles.navOptionsStar}>
               <Icon icon="emojione:eight-pointed-star" />
             </li>
           </ul>
+        </div>
+
+        <div className={styles.social}>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <Icon icon="brandico:facebook" />
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <Icon icon="cib:instagram" />
+          </a>
         </div>
       </div>
     </motion.div>

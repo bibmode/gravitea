@@ -1,19 +1,8 @@
 .wrapper {
-  // align-self: center;
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: flex-start;
-  // padding-inline: var(--spacing);
   width: 100vw;
-  position: fixed;
-  // width: 100vw;
   z-index: 3000;
   display: flex;
   justify-content: center;
-  // display: flex;
-  // justify-content: center;
-  // transition: all 0.5s;
-  // max-width: var(--maxWidth);
   transition: all 0.5s;
 
   &2 {
@@ -29,11 +18,62 @@
   &Colored {
     background-color: var(--white);
     padding-block: 10px;
+    position: fixed;
+
+    & .wrapper2 {
+      justify-content: space-between;
+
+      @media only screen and (min-width: 900px) {
+        align-items: center;
+      }
+    }
+
+    .logo {
+      @media only screen and (min-width: 900px) {
+        width: 50px;
+      }
+    }
+
+    .navOptions {
+      ul {
+        @media only screen and (min-width: 900px) {
+          font-size: 18px;
+          transform: none;
+        }
+
+        li:not(:first-of-type) {
+          margin-left: 50px;
+        }
+      }
+
+      &Star {
+        @media only screen and (min-width: 900px) {
+          display: none;
+        }
+      }
+    }
+
+    .social {
+      display: flex;
+
+      :last-child {
+        margin-left: 10px;
+      }
+
+      @media only screen and (max-width: 900px) {
+        display: none;
+      }
+    }
   }
 
   &Transparent {
     background-color: transparent;
     padding-block: 30px;
+    position: absolute;
+
+    .social {
+      display: none;
+    }
   }
 }
 
@@ -75,7 +115,7 @@ input:checked ~ .navBtn {
   cursor: pointer;
   margin-top: 15px;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 900px) {
     display: none;
   }
 
@@ -101,7 +141,7 @@ input:checked ~ .navBtn {
   flex-direction: column;
   align-items: flex-end;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 900px) {
     display: none;
   }
 
@@ -114,7 +154,7 @@ input:checked ~ .navBtn {
     font-size: 24px;
     font-weight: 600;
     transform: translateX(20px);
-    li {
+    li:not(:first-of-type) {
       margin-left: 50px;
     }
   }

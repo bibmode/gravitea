@@ -1,7 +1,20 @@
 import { AnimatePresence, motion } from "framer-motion";
+import {
+  LocomotiveScrollProvider,
+  useLocomotiveScroll,
+} from "react-locomotive-scroll";
+
 import Head from "next/head";
 import Image from "next/image";
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  createRef,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+
 import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
 import Drawer from "../components/Drawer/Drawer";
@@ -17,10 +30,6 @@ export default function Home() {
   const [navBar, setNavBar] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [currentScrollPos, setCurrentScrollPos] = useState(null);
-
-  useEffect(() => {
-    console.log(drawer);
-  }, [drawer]);
 
   const handleScroll = () => {
     setCurrentScrollPos(window.pageYOffset);
@@ -39,11 +48,17 @@ export default function Home() {
       window.pageYOffset > 50 && setNavBar(prevScrollPos > currentScrollPos);
       setPrevScrollPos(currentScrollPos);
     }
+
+    console.log(currentScrollPos, prevScrollPos);
   }, [currentScrollPos]);
 
+  // useEffect(() => {
+  //   setPrevScrollPos(window.pageYOffset);
+  //   window.addEventListener("scroll", handleScroll);
+  // }, []);
+
   useEffect(() => {
-    setPrevScrollPos(window.pageYOffset);
-    window.addEventListener("scroll", handleScroll);
+    console.log("hello");
   }, []);
 
   return (
@@ -54,7 +69,7 @@ export default function Home() {
         currentScrollPos,
       }}
     >
-      <div>
+      <div data-scroll-section>
         <div className={styles.main}>
           <AnimatePresence>{navBar && <NavBar />}</AnimatePresence>
           <AnimatePresence>{drawer && <Drawer />}</AnimatePresence>

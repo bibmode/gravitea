@@ -1,10 +1,10 @@
 .container {
-  margin-inline: var(--spacing);
   padding-block: 55px 100px;
   display: flex;
   justify-content: center;
 
   &2 {
+    padding-inline: var(--spacing);
     position: relative;
     width: 100%;
     max-width: var(--maxWidth);
@@ -19,7 +19,7 @@
     @media only screen and (min-width: 900px) {
       font-size: 48px;
       position: absolute;
-      right: 0;
+      right: var(--spacing);
     }
   }
 
@@ -67,7 +67,7 @@
 
     @media only screen and (min-width: 900px) {
       position: absolute;
-      right: 0;
+      right: var(--spacing);
       bottom: 0;
       line-height: 1;
     }
@@ -81,7 +81,7 @@
   @media only screen and (min-width: 900px) {
     width: 265px;
     position: absolute;
-    right: 0;
+    right: var(--spacing);
     top: 10%;
   }
 }
@@ -101,7 +101,7 @@
     flex-direction: column-reverse;
     text-align: right;
     position: absolute;
-    right: 0;
+    right: var(--spacing);
     bottom: 8%;
   }
 

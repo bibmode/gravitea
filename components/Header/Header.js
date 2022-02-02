@@ -53,7 +53,7 @@ const Header = () => {
             <h1>gravitea</h1>
 
             <div className={styles.title2Items}>
-              <p>Milkshakes and</p>
+              <p>Milkteas and</p>
               <p>Snacks</p>
             </div>
 
