@@ -6,9 +6,18 @@ import Ellipse from "../../public/ellipseStar.svg";
 import { Icon } from "@iconify/react";
 import Particles from "react-tsparticles";
 import Milkshake from "../Milkshake/Milkshake";
+import { useEffect } from "react";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 const Header = () => {
   const transition = { duration: 4, ease: "easeInOut" };
+  let { scroll } = useLocomotiveScroll();
+
+  const goToAbout = (e) => {
+    e.preventDefault();
+    scroll && scroll.scrollTo("#about-section");
+  };
+
   const particlesInit = (main) => {
     console.log(main);
 
@@ -20,7 +29,7 @@ const Header = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <section className={styles.wrapper}>
       <Grid />
 
       <div className={styles.container}>
@@ -72,7 +81,7 @@ const Header = () => {
           </div>
 
           <div className={styles.downBtn}>
-            <button className={styles.downBtnButton}>
+            <button className={styles.downBtnButton} onClick={goToAbout}>
               <Icon
                 className={styles.downBtnIcon}
                 icon="icon-park:arrow-down"
@@ -81,7 +90,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

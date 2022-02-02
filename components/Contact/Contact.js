@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import styles from "./Contact.module.scss";
 import dynamic from "next/dynamic";
+import { useEffect } from "react";
 
 const Contact = () => {
   const MapWithNoSSR = dynamic(() => import("../Map/Map"), {
@@ -8,7 +9,7 @@ const Contact = () => {
   });
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container} id="contact-section">
       <div className={styles.container2}>
         <h1>contact</h1>
         <h2>
@@ -43,7 +44,7 @@ const Contact = () => {
 
         <h5>© 2022</h5>
       </div>
-    </div>
+    </section>
   );
 };
 

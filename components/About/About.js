@@ -3,7 +3,7 @@ import styles from "./About.module.scss";
 
 const About = () => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container} id="about-section">
       {/* blobs */}
       <div className={`${styles.blobGreen} ${styles.blob}`}>
         <div className={styles.blobGreenDiamond}>
@@ -70,7 +70,7 @@ const About = () => {
           <p>{`Cash on delivery | Gcash | Over the counter`}</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -5,18 +5,20 @@ import { AppContext } from "../../pages";
 import { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 const NavBar = () => {
-  const { setDrawer, currentScrollPos } = useContext(AppContext);
-  const [viewportHeight, setViewportHeight] = useState(null);
+  const { setDrawer, height } = useContext(AppContext);
+  let { scroll } = useLocomotiveScroll();
+
+  const goToSection = (e, target) => {
+    e.preventDefault();
+    scroll && scroll.scrollTo(`#${target}-section`);
+  };
 
   const handleChange = (e) => {
     setDrawer(e.target.checked);
   };
-
-  useEffect(() => {
-    setViewportHeight(window.innerHeight);
-  }, []);
 
   return (
     <motion.div
@@ -25,11 +27,10 @@ const NavBar = () => {
       exit={{ y: "-100%" }}
       transition={{ ease: "easeIn" }}
       className={`${styles.wrapper} ${
-        viewportHeight && currentScrollPos > viewportHeight
-          ? styles.wrapperColored
-          : styles.wrapperTransparent
+        height > 200 ? styles.wrapperColored : styles.wrapperTransparent
       }`}
       id="navbar"
+      data-scroll-sticky
     >
       <div className={styles.wrapper2}>
         <img src="Logo.png" alt="gravitea logo" className={styles.logo} />
@@ -51,13 +52,22 @@ const NavBar = () => {
         <div className={styles.navOptions}>
           <ul>
             <li>
-              <a href="#">about</a>
+              <a href="#about-section" onClick={(e) => goToSection(e, "about")}>
+                about
+              </a>
             </li>
             <li>
-              <a href="#">menu</a>
+              <a href="#menu-section" onClick={(e) => goToSection(e, "menu")}>
+                menu
+              </a>
             </li>
             <li>
-              <a href="#">contact</a>
+              <a
+                href="#contact-section"
+                onClick={(e) => goToSection(e, "contact")}
+              >
+                contact
+              </a>
             </li>
 
             <li className={styles.navOptionsStar}>

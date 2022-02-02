@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 
 const Menu = () => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container} id="menu-section">
       <div className={styles.menuTitle}>
         <h1>MENU - MENU - MENU - MENU</h1>
       </div>
@@ -48,7 +48,7 @@ const Menu = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
