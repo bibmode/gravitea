@@ -1,12 +1,36 @@
 import styles from "./Menu.module.scss";
 import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
+
+const marqueeVariants = {
+  animate: {
+    x: [0, -2000],
+    transition: {
+      x: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 20,
+        ease: "linear",
+      },
+    },
+  },
+};
 
 const Menu = () => {
   return (
-    <section className={styles.container} id="menu-section">
-      <div className={styles.menuTitle}>
-        <h1>MENU - MENU - MENU - MENU</h1>
-      </div>
+    <section className={styles.container} id="menu-section" data-scroll>
+      <motion.div
+        variants={marqueeVariants}
+        animate="animate"
+        className={styles.menuTitle}
+      >
+        <h1>
+          MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU -
+          MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU -
+          MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU -
+          MENU - MENU
+        </h1>
+      </motion.div>
 
       <div className={styles.wrapper}>
         <div className={styles.menuNav}>

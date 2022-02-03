@@ -16,10 +16,9 @@
   z-index: -1;
 
   &Green {
-    top: -100px;
     left: -100px;
-    width: clamp(436px, 5vw, 600px);
-    height: clamp(436px, 5vw, 600px);
+    width: min(130%, 550px);
+    height: min(130%, 550px);
 
     background: radial-gradient(
       50% 50% at 50% 50%,
@@ -48,8 +47,8 @@
   }
 
   &Purple {
-    width: 480px;
-    height: 480px;
+    width: min(130%, 550px);
+    height: min(130%, 550px);
 
     background: radial-gradient(
       50% 50% at 50% 50%,
@@ -63,7 +62,7 @@
     }
 
     &2 {
-      bottom: -540px;
+      bottom: -280px;
       left: -50px;
     }
 

@@ -32,13 +32,28 @@
   z-index: 7000;
 }
 
-// .blob {
-//   width: 856px;
-//   height: 856px;
-//   background: radial-gradient(
-//     45.55% 45.55% at 50% 50%,
-//     #e486ec 0%,
-//     rgba(220, 71, 233, 0) 100%
-//   );
-//   backdrop-filter: blur(5px);
-// }
+.text {
+  position: absolute;
+  top: 25px;
+  left: -90px;
+  width: 600px;
+  height: auto;
+  transform: scale(1.1);
+
+  text {
+    font-family: "Lora";
+    fill: #000;
+    font-size: 30px;
+    transform: scale(0.95) translate(15px, 15px);
+  }
+}
+
+.diamond {
+  &1 {
+    transform: translate(89%, 10%) rotate(10deg) scale(1.2);
+  }
+
+  &2 {
+    transform: translate(10%, 70%) rotate(10deg) scale(0.9);
+  }
+}

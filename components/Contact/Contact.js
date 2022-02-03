@@ -9,7 +9,7 @@ const Contact = () => {
   });
 
   return (
-    <section className={styles.container} id="contact-section">
+    <section className={styles.container} id="contact-section" data-scroll>
       <div className={styles.container2}>
         <h1>contact</h1>
         <h2>

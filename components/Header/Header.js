@@ -29,7 +29,7 @@ const Header = () => {
   };
 
   return (
-    <section className={styles.wrapper}>
+    <section className={styles.wrapper} data-scroll>
       <Grid />
 
       <div className={styles.container}>

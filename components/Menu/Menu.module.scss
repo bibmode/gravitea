@@ -25,7 +25,7 @@
     font-weight: 800;
     font-size: 144px;
     color: transparent;
-    -webkit-text-stroke: 1px var(--white);
+    -webkit-text-stroke: 2px var(--white);
     text-shadow: none;
     line-height: 1;
   }
@@ -158,11 +158,7 @@
 
   p {
     font-weight: 400;
-    font-size: 13px;
+    font-size: 14px;
     margin-top: 20px;
-
-    @media only screen and (min-width: 900px) {
-      font-size: 18px;
-    }
   }
 }

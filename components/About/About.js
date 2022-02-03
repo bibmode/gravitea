@@ -3,7 +3,7 @@ import styles from "./About.module.scss";
 
 const About = () => {
   return (
-    <section className={styles.container} id="about-section">
+    <section className={styles.container} id="about-section" data-scroll>
       {/* blobs */}
       <div className={`${styles.blobGreen} ${styles.blob}`}>
         <div className={styles.blobGreenDiamond}>

@@ -29,9 +29,42 @@ export default function Home() {
   const [section, setSection] = useState("about");
   let { scroll } = useLocomotiveScroll();
 
+  const options = ["about", "menu", "contact"];
+
+  const goToSection = (e, target) => {
+    e.preventDefault();
+    scroll && scroll.scrollTo(`#${target}-section`);
+
+    // setSection(target);
+  };
+
+  const getCurrentSection = (sections) => {
+    console.log(sections);
+
+    const currentId = sections[0].id;
+
+    switch (currentId) {
+      case "el1":
+        setSection("about");
+        break;
+      case "el2":
+        setSection("menu");
+        break;
+      case "el3":
+        setSection("contact");
+        break;
+      default:
+        setSection("about");
+        break;
+    }
+  };
+
   useEffect(() => {
     if (scroll && !drawer) {
       scroll.on("scroll", (position) => {
+        const elementsInView = Object.values(position.currentElements);
+        getCurrentSection(elementsInView);
+
         position.direction === "down" && setNavBar(false);
         position.direction === "up" && setNavBar(true);
 
@@ -57,6 +90,8 @@ export default function Home() {
           navBar,
           height,
           section,
+          setSection,
+          goToSection,
         }}
       >
         <AnimatePresence>{navBar && <NavBar />}</AnimatePresence>

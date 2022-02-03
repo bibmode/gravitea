@@ -8,13 +8,8 @@ import { Icon } from "@iconify/react";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 const NavBar = () => {
-  const { setDrawer, height } = useContext(AppContext);
+  const { setDrawer, height, goToSection, section } = useContext(AppContext);
   let { scroll } = useLocomotiveScroll();
-
-  const goToSection = (e, target) => {
-    e.preventDefault();
-    scroll && scroll.scrollTo(`#${target}-section`);
-  };
 
   const handleChange = (e) => {
     setDrawer(e.target.checked);
@@ -52,17 +47,28 @@ const NavBar = () => {
         <div className={styles.navOptions}>
           <ul>
             <li>
-              <a href="#about-section" onClick={(e) => goToSection(e, "about")}>
+              <a
+                className={`${section === "about" && styles.focused}`}
+                href="#about-section"
+                onClick={(e) => goToSection(e, "about")}
+              >
                 about
               </a>
             </li>
             <li>
-              <a href="#menu-section" onClick={(e) => goToSection(e, "menu")}>
+              <a
+                className={`${section === "menu" && styles.focused}`}
+                id="nav-menu"
+                href="#menu-section"
+                onClick={(e) => goToSection(e, "menu")}
+              >
                 menu
               </a>
             </li>
             <li>
               <a
+                className={`${section === "contact" && styles.focused}`}
+                id="nav-contact"
                 href="#contact-section"
                 onClick={(e) => goToSection(e, "contact")}
               >
