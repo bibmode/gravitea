@@ -55,7 +55,26 @@ const Header = () => {
 
           <div className={styles.milkshake}>
             <Milkshake />
-            <div className={styles.milkshakeBlob}></div>
+            <div className={styles.milkshakeBlob}>
+              <div
+                className={`${styles.milkshakeStars} ${styles.milkshakeStars1}`}
+              />
+              <div
+                className={`${styles.milkshakeStars} ${styles.milkshakeStars1}`}
+              />
+              <div
+                className={`${styles.milkshakeStars} ${styles.milkshakeStars2}`}
+              />
+              <div
+                className={`${styles.milkshakeStars} ${styles.milkshakeStars2}`}
+              />
+              <div
+                className={`${styles.milkshakeStars} ${styles.milkshakeStars3}`}
+              />
+              <div
+                className={`${styles.milkshakeStars} ${styles.milkshakeStars3}`}
+              />
+            </div>
           </div>
 
           <div className={styles.title2}>

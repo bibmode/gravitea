@@ -169,7 +169,6 @@ input:checked ~ .navBtn {
 
 .focused {
   position: relative;
-  transition: all 0.2s;
 
   &::before {
     position: absolute;
@@ -178,5 +177,15 @@ input:checked ~ .navBtn {
     height: 4px;
     bottom: -10px;
     background-color: var(--primary);
+    animation: focusMove 0.8s;
+  }
+}
+
+@keyframes focusMove {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
   }
 }

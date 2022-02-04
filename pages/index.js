@@ -34,14 +34,13 @@ export default function Home() {
   const goToSection = (e, target) => {
     e.preventDefault();
     scroll && scroll.scrollTo(`#${target}-section`);
-
-    // setSection(target);
   };
 
-  const getCurrentSection = (sections) => {
-    console.log(sections);
-
-    const currentId = sections[0].id;
+  const getCurrentSection = (sections, direction) => {
+    const currentId =
+      direction == "up" || sections.length < 2
+        ? sections[0]?.id
+        : sections[1]?.id;
 
     switch (currentId) {
       case "el1":
@@ -63,7 +62,7 @@ export default function Home() {
     if (scroll && !drawer) {
       scroll.on("scroll", (position) => {
         const elementsInView = Object.values(position.currentElements);
-        getCurrentSection(elementsInView);
+        getCurrentSection(elementsInView, position.direction);
 
         position.direction === "down" && setNavBar(false);
         position.direction === "up" && setNavBar(true);

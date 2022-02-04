@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }) {
       options={{
         smooth: true,
         getDirection: true,
+        lerp: 0.2,
         // ... all available Locomotive Scroll instance options
       }}
       watch={

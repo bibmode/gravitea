@@ -26,7 +26,11 @@ const About = () => {
       </div>
 
       <div className={styles.milkshake}>
-        <img src="milkshake-table.jpg" alt="milkshake on table" />
+        <div className={styles.milkshakeImage}>
+          <img src="star-ring.svg" alt="star ring" />
+          <img src="milkshake-table.jpg" alt="milkshake on table" />
+        </div>
+
         <div className={styles.milkshakeDetails}>
           <h2>Where your cravings attracts satisfaction</h2>
           <p>

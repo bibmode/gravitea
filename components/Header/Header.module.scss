@@ -132,6 +132,9 @@
     font-size: clamp(70px, 7.5vw, 180px);
     text-transform: uppercase;
     letter-spacing: 0.02em;
+    background: url("../../public/stars-space.gif");
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
   }
 
   &Items {
@@ -173,7 +176,7 @@
   }
 
   &Details {
-    width: 110%;
+    width: min(110%, 700px);
     position: absolute;
     right: 0;
     margin-top: 120px;
@@ -198,7 +201,6 @@
   position: absolute;
   top: 30%;
   left: 13%;
-  // z-index: 5000;
   transform: rotate(-10deg) scale(0.9);
   height: 80vh;
   width: fit-content;
@@ -208,16 +210,59 @@
   }
 
   &Blob {
+    position: relative;
     width: 1000px;
     height: 1000px;
     background: radial-gradient(
       45.55% 45.55% at 50% 50%,
-      #e486ec 0%,
+      #dd21ed 0%,
       rgba(220, 71, 233, 0) 100%
     );
     transform: translate(-30%, -35%);
     z-index: 1;
-    // opacity: 0;
+  }
+
+  &Stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    background: transparent
+      url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top
+      center;
+    mask-image: url(http://www.script-tutorials.com/demos/360/images/twinkling.png);
+    mask-mode: alpha;
+
+    -moz-animation: twinkle 10s linear infinite;
+    -ms-animation: twinkle 10s linear infinite;
+    -o-animation: twinkle 10s linear infinite;
+    -webkit-animation: twinkle 10s linear infinite;
+    z-index: 7000;
+
+    &1 {
+      top: 10%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &2 {
+      top: 20%;
+      left: 50%;
+    }
+
+    &2 {
+      top: 20%;
+      left: 10%;
+    }
+  }
+}
+
+@keyframes twinkle {
+  100% {
+    -webkit-mask-position: right;
+    mask-position: right;
   }
 }
 
