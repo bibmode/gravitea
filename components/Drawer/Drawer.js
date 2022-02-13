@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 
 const Drawer = () => {
   const { setDrawer } = useContext(AppContext);
-
   return (
     <motion.div
       initial={{ x: "-100%" }}
@@ -16,13 +15,6 @@ const Drawer = () => {
       transition={{ ease: "easeInOut", duration: 1 }}
       className={styles.container}
     >
-      {/* <div className={styles.nav}>
-        <img src="Logo.png" alt="gravitea logo" className={styles.logo} />
-        <button className={styles.close} onClick={() => setDrawer(false)}>
-          <Icon className={styles.closeIcon} icon="octicon:x-16" />
-        </button>
-      </div> */}
-
       <div className={styles.social}>
         <button className={styles.socialButton}>
           <Icon icon="brandico:facebook" />
@@ -33,9 +25,18 @@ const Drawer = () => {
       </div>
 
       <div className={styles.navLinks}>
-        <a href="#">about</a>
-        <a href="#">menu</a>
-        <a href="#">contact</a>
+        <a href="#about-section" onClick={() => setDrawer(false)}>
+          about
+        </a>
+        <a href="#menu-section" onClick={() => setDrawer(false)}>
+          menu
+        </a>
+        <a href="#faq-section" onClick={() => setDrawer(false)}>
+          faq
+        </a>
+        <a href="#contact-section" onClick={() => setDrawer(false)}>
+          contact
+        </a>
       </div>
 
       <h2>

@@ -4,19 +4,64 @@ import styles from "./Milkshake.module.scss";
 const transition = { duration: 4, repeat: Infinity, ease: "easeInOut" };
 
 const Milkshake = () => {
+  const time = [1, 1.2, 0.6, 0.8];
+
   return (
     <div className={styles.wrapper}>
-      <div>
+      <motion.div
+        animate={{
+          y: [0, -20, 0],
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 2,
+        }}
+        className={styles.main}
+      >
         <div className={styles.front}>
           <img src="./cup/cup-front.svg" alt="front of cup" />
         </div>
         <div className={styles.top}>
           <img src="./cup/cup-top.svg" alt="top of cup" />
         </div>
+
         <div className={styles.back}>
+          <div className={styles.bubbles}>
+            {[1, 2, 3, 4, 5].map((bubble) => (
+              <motion.div
+                // className={styles.bubblesItem}
+                key={bubble}
+                animate={{
+                  y: [0, -400],
+                  x: [0, -100, 0, 50, 0],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 3 * time[Math.floor(Math.random() * time.length)],
+                }}
+                className={`${styles[`bubble${bubble}`]} ${styles.bubble}`}
+              />
+            ))}
+            {[1, 2, 3, 4, 5].map((bubble) => (
+              <motion.div
+                // className={styles.bubblesItem}
+                key={bubble}
+                animate={{
+                  y: [0, -400],
+                  x: [0, -80, 0, -20, 0],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 3 * time[Math.floor(Math.random() * time.length)],
+                }}
+                className={`${styles[`bubble${bubble}`]} ${styles.bubble}`}
+              />
+            ))}
+          </div>
+
           <img src="./cup/cup-back.svg" alt="back of cup" />
         </div>
-      </div>
+      </motion.div>
 
       <svg
         className={styles.text}

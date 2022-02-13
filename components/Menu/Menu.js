@@ -1,6 +1,8 @@
 import styles from "./Menu.module.scss";
 import { Icon } from "@iconify/react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useContext } from "react";
+import { AppContext } from "../../pages";
 
 const marqueeVariants = {
   animate: {
@@ -17,8 +19,33 @@ const marqueeVariants = {
 };
 
 const Menu = () => {
+  const { milkteas, appetizers } = useContext(AppContext);
+  const [menu, setMenu] = useState(1);
+
   return (
-    <section className={styles.container} id="menu-section" data-scroll>
+    <section
+      className={styles.container}
+      id="menu-section"
+      data-scroll
+      data-scroll-section
+    >
+      <Icon
+        className={styles.star}
+        icon="emojione-monotone:eight-pointed-star"
+      />
+      <Icon
+        className={styles.star}
+        icon="emojione-monotone:eight-pointed-star"
+      />
+      <Icon
+        className={styles.star}
+        icon="emojione-monotone:eight-pointed-star"
+      />
+      <Icon
+        className={styles.star}
+        icon="emojione-monotone:eight-pointed-star"
+      />
+
       <motion.div
         variants={marqueeVariants}
         animate="animate"
@@ -33,30 +60,111 @@ const Menu = () => {
       </motion.div>
 
       <div className={styles.wrapper}>
+        <a
+          className={styles.sale}
+          href="https://www.facebook.com/100590172452308/photos/a.126463249865000/127549869756338/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon icon="typcn:starburst" />
+          <h2>Buy 2 Get 1</h2>
+        </a>
+
         <div className={styles.menuNav}>
-          <a href="#">milkteas</a>
-          <a href="#">appetizers</a>
+          <input type="radio" name="menuOptions" id="option1" defaultChecked />
+          <label htmlFor="option1" onClick={() => setMenu(1)}>
+            milkteas
+          </label>
+
+          <input type="radio" name="menuOptions" id="option2" />
+          <label htmlFor="option2" onClick={() => setMenu(0)}>
+            appetizers
+          </label>
         </div>
 
         <div className={styles.mainList}>
-          <p>
-            Enjoy our yummy selection of milktea flavors made with{" "}
-            <span>
-              <Icon icon="clarity:heart-solid" />
-            </span>{" "}
-          </p>
-          <table className={styles.table}>
-            <tr>
-              <th> </th>
-              <th>M</th>
-              <th>L</th>
-            </tr>
-            <tr>
-              <td className={styles.tableName}>mango cheesecake</td>
-              <td>P79</td>
-              <td>P85</td>
-            </tr>
-          </table>
+          {menu ? (
+            <AnimatePresence>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                Enjoy our yummy selection of milktea flavors made with{" "}
+                <span>
+                  <Icon icon="clarity:heart-solid" />
+                </span>
+              </motion.p>
+            </AnimatePresence>
+          ) : (
+            <AnimatePresence>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className={styles.text2}
+              >
+                Simple and tasty staple snacks to complete the fun!
+              </motion.p>
+            </AnimatePresence>
+          )}
+          <div className={styles.tableContainer}>
+            {!menu ? (
+              <AnimatePresence>
+                <motion.table
+                  className={styles.table}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <thead>
+                    <tr>
+                      <th> </th>
+                      <th> </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {appetizers.map((item, index) => (
+                      <tr key={index}>
+                        <td className={styles.tableName}>{item.name}</td>
+                        <td>{item.price}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </motion.table>
+              </AnimatePresence>
+            ) : (
+              <AnimatePresence>
+                <motion.table
+                  className={styles.table}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <thead>
+                    <tr>
+                      <th> </th>
+                      <th>M</th>
+                      <th>L</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {milkteas.map((item, index) => (
+                      <tr key={index}>
+                        <td className={styles.tableName}>{item.name}</td>
+                        <td>P{item.mediumPrice}</td>
+                        <td>P{item.largePrice}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </motion.table>
+              </AnimatePresence>
+            )}
+          </div>
         </div>
 
         <div className={styles.promotions}>
@@ -65,7 +173,13 @@ const Menu = () => {
             icon="ic:round-delivery-dining"
           />
           <h3>We do deliveries</h3>
-          <a href="#">order yours here</a>
+          <a
+            href="https://www.facebook.com/GraviTea-100590172452308"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            order yours here
+          </a>
           <p>
             For our customers with allergies, please feel free to make special
             requests

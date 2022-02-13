@@ -12,7 +12,6 @@ const Grid = () => {
   }, []);
 
   useEffect(() => {
-    console.log(verticalLines, horizontalLines);
     setVerticalLines(Math.round(innerWidth / 65));
   }, [verticalLines, horizontalLines]);
 

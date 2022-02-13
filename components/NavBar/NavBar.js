@@ -8,8 +8,37 @@ import { Icon } from "@iconify/react";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 const NavBar = () => {
-  const { setDrawer, height, goToSection, section } = useContext(AppContext);
+  const {
+    setDrawer,
+    height,
+    setNavBar,
+    setHeight,
+    setSection,
+    drawer,
+    section,
+  } = useContext(AppContext);
+
   let { scroll } = useLocomotiveScroll();
+
+  const goToSection = (e, target) => {
+    e.preventDefault();
+    scroll && scroll.scrollTo(`#${target}-section`);
+    setSection(target);
+  };
+
+  const getCurrentSection = (y) => {
+    if (y <= 2400) setSection("about");
+    if (y > 2400 && y <= 3360) setSection("menu");
+    if (y > 3360 && y <= 5160) setSection("faq");
+    if (y > 5160) setSection("contact");
+    y <= 150 && setHeight(y);
+  };
+
+  if (scroll) {
+    scroll.on("scroll", (position) => {
+      getCurrentSection(position.scroll.y);
+    });
+  }
 
   const handleChange = (e) => {
     setDrawer(e.target.checked);
@@ -20,16 +49,17 @@ const NavBar = () => {
       initial={{ y: "-100%" }}
       animate={{ y: "0" }}
       exit={{ y: "-100%" }}
-      transition={{ ease: "easeIn" }}
+      transition={{ ease: "easeInOut", duration: 0.3 }}
       className={`${styles.wrapper} ${
-        height > 200 ? styles.wrapperColored : styles.wrapperTransparent
+        height > 70 && height < 150
+          ? styles.wrapperColored
+          : styles.wrapperTransparent
       }`}
       id="navbar"
       data-scroll-sticky
     >
       <div className={styles.wrapper2}>
         <img src="Logo.png" alt="gravitea logo" className={styles.logo} />
-        {/* onClick={() => setDrawer(true)} */}
 
         <input
           className={styles.input}
@@ -63,6 +93,16 @@ const NavBar = () => {
                 onClick={(e) => goToSection(e, "menu")}
               >
                 menu
+              </a>
+            </li>
+            <li>
+              <a
+                className={`${section === "faq" && styles.focused}`}
+                id="nav-faq"
+                href="#faq-section"
+                onClick={(e) => goToSection(e, "faq")}
+              >
+                faq
               </a>
             </li>
             <li>

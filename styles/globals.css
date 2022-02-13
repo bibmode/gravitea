@@ -3,10 +3,10 @@
   --white: #ffffff;
   --gray: #e6e7e8;
   --primary: #dd21ed;
-  --secondary: #7faa3c;
-  --pink: rgb(219, 180, 222);
+  --secondary: rgb(127, 170, 60);
+  --pink: rgb(237, 195, 240);
 
-  --spacing: clamp(10px, 7vw, 25vw);
+  --spacing: clamp(10px, 5vw, 25vw);
   --maxWidth: 2000px;
 
   /* media breaks */
@@ -21,6 +21,30 @@ body {
   font-family: "Sora", sans-serif;
   font-weight: 400;
   overflow-x: hidden;
+}
+
+body {
+  position: relative;
+}
+
+main {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+footer {
+  padding-block: 15px;
+  border-top: 1px solid var(--gray);
+}
+
+footer p {
+  font-weight: 300;
+  font-size: 12px;
+
+  text-align: center;
 }
 
 html:focus-within {
@@ -44,7 +68,7 @@ a {
   color: var(--black);
 }
 
-#tsparticles canvas {
+/* #tsparticles canvas {
   position: absolute !important;
 }
 
@@ -52,7 +76,7 @@ a {
   width: 100vw;
   height: 100vh;
   overflow: auto;
-}
+} */
 
 /* scrollbar */
 
@@ -97,6 +121,7 @@ html.has-scroll-dragging {
   transform-origin: center right;
   transition: transform 0.3s, opacity 0.3s;
   opacity: 0;
+  display: none !important;
 }
 .c-scrollbar:hover {
   transform: scaleX(1.45);

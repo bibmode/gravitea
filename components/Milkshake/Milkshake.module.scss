@@ -3,14 +3,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: rotate(-10deg) translate(-20px, 60px);
+}
 
-  // background-color: cornflowerblue;
+.main {
+  z-index: 9999;
 }
 
 .top {
   position: absolute;
   top: -358px;
-  // left: 5px;
   transform: scale(1.01) rotate(0.3deg) translateX(-1px);
   z-index: 7003;
 }
@@ -18,7 +20,6 @@
 .front {
   position: absolute;
   transform: translateX(20px);
-  // background-color: #6494ed85;
   z-index: 7002;
 }
 
@@ -28,8 +29,56 @@
   height: fit-content;
   transform: rotate(0.4deg) translateX(18px);
   top: 5px;
-  // background-color: chartreuse;
   z-index: 7000;
+}
+
+.bubbles {
+  position: absolute;
+  bottom: 0;
+  // background-color: #000;
+  width: 68%;
+  height: 85%;
+  left: 20%;
+  bottom: 50px;
+  transform: rotate(8deg);
+  overflow: hidden;
+
+  .bubble {
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+
+    &1 {
+      width: 30px;
+      height: 30px;
+      right: 0;
+    }
+
+    &2 {
+      width: 30px;
+      height: 30px;
+      right: 10%;
+    }
+
+    &3 {
+      width: 40px;
+      height: 40px;
+      right: 20%;
+    }
+
+    &4 {
+      width: 25px;
+      height: 25px;
+      right: 30%;
+    }
+
+    &5 {
+      width: 40px;
+      height: 40px;
+      right: 70%;
+    }
+  }
 }
 
 .text {
@@ -42,7 +91,7 @@
 
   text {
     font-family: "Lora";
-    fill: #000;
+    fill: var(--black);
     font-size: 30px;
     transform: scale(0.95) translate(15px, 15px);
   }
@@ -51,9 +100,11 @@
 .diamond {
   &1 {
     transform: translate(89%, 10%) rotate(10deg) scale(1.2);
+    fill: var(--black);
   }
 
   &2 {
     transform: translate(10%, 70%) rotate(10deg) scale(0.9);
+    fill: var(--black);
   }
 }

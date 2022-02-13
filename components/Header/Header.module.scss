@@ -12,6 +12,8 @@
   height: 100vh;
   position: relative;
   z-index: 1000;
+  // display: flex;
+  // align-items: center;
 
   &2 {
     padding-inline: var(--spacing);
@@ -42,10 +44,20 @@
   z-index: 5000;
 
   a {
-    padding-right: 20px;
+    margin-right: 20px;
+    height: 42px;
+    display: flex;
+
+    &:hover svg path {
+      fill: var(--primary);
+    }
+    svg path {
+      transition: all 0.2s ease;
+    }
 
     &:first-of-type {
       padding-left: 10px;
+      margin-bottom: 15px;
     }
   }
 }
@@ -62,6 +74,10 @@
     top: 18%;
     left: 25%;
 
+    @media only screen and (min-width: 1120px) {
+      left: 53%;
+    }
+
     path {
       fill: var(--primary) !important;
     }
@@ -75,6 +91,15 @@
   &:nth-of-type(3) {
     right: 15%;
     top: 57%;
+
+    @media only screen and (min-width: 1120px) {
+      top: 67%;
+      right: 25%;
+
+      path {
+        fill: var(--primary) !important;
+      }
+    }
   }
 }
 
@@ -122,7 +147,7 @@
 
 .title2 {
   position: absolute;
-  top: 35%;
+  top: 32%;
   right: 0;
   margin-right: var(--spacing);
   text-align: right;
@@ -132,7 +157,7 @@
     font-size: clamp(70px, 7.5vw, 180px);
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    background: url("../../public/stars-space.gif");
+    background: url("../../public/text-star.gif");
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
@@ -179,7 +204,7 @@
     width: min(110%, 700px);
     position: absolute;
     right: 0;
-    margin-top: 120px;
+    margin-top: 110px;
     color: var(--primary);
 
     @media only screen and (max-width: 890px) {
@@ -199,8 +224,8 @@
 
 .milkshake {
   position: absolute;
-  top: 30%;
-  left: 13%;
+  top: 40%;
+  left: 10%;
   transform: rotate(-10deg) scale(0.9);
   height: 80vh;
   width: fit-content;
@@ -219,7 +244,7 @@
       rgba(220, 71, 233, 0) 100%
     );
     transform: translate(-30%, -35%);
-    z-index: 1;
+    z-index: -1;
   }
 
   &Stars {
