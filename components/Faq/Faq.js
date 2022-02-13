@@ -9,19 +9,21 @@ const Faq = () => {
 
   const data = [
     {
-      question: "What kind of milkteas do you serve?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales viverra lacus amet dui accumsan sed. Dignissim enim suspendisse amet ultrices risus, lacus, facilisi feugiat.",
+      question: "Where are you located?",
+      answer: "We are located in B5 L16 Regatta Homes, ampayon Butuan City",
     },
     {
-      question: "What hours are we open?",
+      question: "How do I make sure if I order the right flavor?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales viverra lacus amet dui accumsan sed. Dignissim enim suspendisse amet ultrices risus, lacus, facilisi feugiat.",
+        "We will send a photo through your social media accs as a proof to ensure that you order the right flavor.",
     },
     {
-      question: "Do you change your menu often?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales viverra lacus amet dui accumsan sed. Dignissim enim suspendisse amet ultrices risus, lacus, facilisi feugiat.",
+      question: "What are the shipping options?",
+      answer: "Maxim or Door to door delivery",
+    },
+    {
+      question: "What are your special service?",
+      answer: "We offer buy 2 take 1",
     },
   ];
 

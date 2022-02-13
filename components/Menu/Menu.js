@@ -1,7 +1,7 @@
 import styles from "./Menu.module.scss";
 import { Icon } from "@iconify/react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { AppContext } from "../../pages";
 
 const marqueeVariants = {
