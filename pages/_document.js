@@ -30,6 +30,10 @@ class MyDocument extends Document {
             content="Gravitea is a milktea shop that offers delicious milktea flavors from different cultures and afternoon snacks that filipinos love. Our menu is sure to be a treat for everyone who wishes to enjoy it in our shop or at home with our fast and convenient delivery service."
           />
           <title>Gravitea: Butuan City&apos;s Favorite Milktea House</title>
+          <meta
+            name="google-site-verification"
+            content="je7G3w3JZzlzAUClfQkSlwITfTGANh8dleejKlPuDws"
+          />
         </Head>
         <body>
           <Main />
