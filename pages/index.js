@@ -1,26 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
-import Head from "next/head";
-import Image from "next/image";
-import {
-  createContext,
-  createRef,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import { useLocomotiveScroll } from "react-locomotive-scroll";
+import { createContext, useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 
-import About from "../components/About/About";
-import Contact from "../components/Contact/Contact";
-import Drawer from "../components/Drawer/Drawer";
-import Faq from "../components/Faq/Faq";
-import Header from "../components/Header/Header";
-import Menu from "../components/Menu/Menu";
-import NavBar from "../components/NavBar/NavBar";
 import styles from "../styles/Home.module.scss";
 
 import MessengerCustomerChat from "react-messenger-customer-chat";
@@ -29,7 +12,7 @@ import Main from "../components/Main/Main";
 
 export const AppContext = createContext(null);
 
-export default function Home({ promotions, milkteas, appetizers }) {
+export default function Home({ promotions, milkteas, appetizers, faqs }) {
   const [drawer, setDrawer] = useState(false);
   const [navBar, setNavBar] = useState(true);
   const [height, setHeight] = useState(1);
@@ -66,6 +49,7 @@ export default function Home({ promotions, milkteas, appetizers }) {
           promotions,
           milkteas,
           appetizers,
+          faqs,
           setNavBar,
           containerRef,
         }}
@@ -126,8 +110,9 @@ export async function getStaticProps(context) {
   );
   const milkteas = await client.fetch(`*[_type == "milkteas"]`);
   const appetizers = await client.fetch(`*[_type == "appetizers"]`);
+  const faqs = await client.fetch(`*[_type == "faqs"]`);
 
   return {
-    props: { promotions, milkteas, appetizers },
+    props: { promotions, milkteas, appetizers, faqs },
   };
 }

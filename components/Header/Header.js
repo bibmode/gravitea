@@ -1,11 +1,7 @@
-import { motion } from "framer-motion";
 import Grid from "../Grid/Grid";
-import NavBar from "../NavBar/NavBar";
 import styles from "./Header.module.scss";
 import { Icon } from "@iconify/react";
-import Particles from "react-tsparticles";
 import Milkshake from "../Milkshake/Milkshake";
-import { useEffect } from "react";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 import dynamic from "next/dynamic";
 

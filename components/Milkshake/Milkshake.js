@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import styles from "./Milkshake.module.scss";
 
-const transition = { duration: 4, repeat: Infinity, ease: "easeInOut" };
-
 const Milkshake = () => {
   const time = [1, 1.2, 0.6, 0.8];
 

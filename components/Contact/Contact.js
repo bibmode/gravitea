@@ -1,7 +1,6 @@
 import { Icon } from "@iconify/react";
 import styles from "./Contact.module.scss";
 import dynamic from "next/dynamic";
-import { useEffect } from "react";
 
 const Contact = () => {
   const MapWithNoSSR = dynamic(() => import("../Map/Map"), {

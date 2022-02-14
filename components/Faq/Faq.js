@@ -5,7 +5,11 @@ import { AppContext } from "../../pages";
 import { urlFor } from "../../client";
 
 const Faq = () => {
-  const { promotions } = useContext(AppContext);
+  const { promotions, faqs } = useContext(AppContext);
+
+  useEffect(() => {
+    console.log(faqs);
+  }, []);
 
   const data = [
     {
@@ -87,7 +91,7 @@ const Faq = () => {
           </div>
 
           <div className={styles.main} data-scroll data-scroll-speed="2">
-            {data.map((item, index) => (
+            {faqs?.map((item, index) => (
               <div className={styles.mainItem} key={index}>
                 <h3>{item.question}</h3>
                 <input
