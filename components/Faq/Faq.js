@@ -1,35 +1,11 @@
 import styles from "./Faq.module.scss";
 import { Icon } from "@iconify/react";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AppContext } from "../../pages";
 import { urlFor } from "../../client";
 
 const Faq = () => {
   const { promotions, faqs } = useContext(AppContext);
-
-  useEffect(() => {
-    console.log(faqs);
-  }, []);
-
-  const data = [
-    {
-      question: "Where are you located?",
-      answer: "We are located in B5 L16 Regatta Homes, ampayon Butuan City",
-    },
-    {
-      question: "How do I make sure if I order the right flavor?",
-      answer:
-        "We will send a photo through your social media accs as a proof to ensure that you order the right flavor.",
-    },
-    {
-      question: "What are the shipping options?",
-      answer: "Maxim or Door to door delivery",
-    },
-    {
-      question: "What are your special service?",
-      answer: "We offer buy 2 take 1",
-    },
-  ];
 
   return (
     <section
