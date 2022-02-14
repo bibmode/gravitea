@@ -9,6 +9,7 @@ import styles from "../styles/Home.module.scss";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import { client } from "../client";
 import Main from "../components/Main/Main";
+import Head from "next/head";
 
 export const AppContext = createContext(null);
 
@@ -93,6 +94,21 @@ export default function Home({ promotions, milkteas, appetizers, faqs }) {
           watch={[navBar, section, drawer]}
           containerRef={containerRef}
         >
+          <Head>
+            <meta
+              name="viewport"
+              content="initial-scale=1.0, width=device-width"
+            />
+            <meta
+              name="description"
+              content="Gravitea is a milktea shop that offers delicious milktea flavors from different cultures and afternoon snacks that filipinos love. Our menu is sure to be a treat for everyone who wishes to enjoy it in our shop or at home with our fast and convenient delivery service."
+            />
+            <meta
+              name="google-site-verification"
+              content="je7G3w3JZzlzAUClfQkSlwITfTGANh8dleejKlPuDws"
+            />
+            <title>Gravitea: Butuan City&apos;s Favorite Milktea House</title>
+          </Head>
           <Main />
         </LocomotiveScrollProvider>
         <MessengerCustomerChat

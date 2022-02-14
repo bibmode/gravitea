@@ -127,7 +127,7 @@ const Menu = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {appetizers.map((item, index) => (
+                    {appetizers?.map((item, index) => (
                       <tr key={index}>
                         <td className={styles.tableName}>{item.name}</td>
                         <td>{item.price}</td>
@@ -153,7 +153,7 @@ const Menu = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {milkteas.map((item, index) => (
+                    {milkteas?.map((item, index) => (
                       <tr key={index}>
                         <td className={styles.tableName}>{item.name}</td>
                         <td>P{item.mediumPrice}</td>

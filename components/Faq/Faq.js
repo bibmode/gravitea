@@ -98,7 +98,7 @@ const Faq = () => {
           </div>
 
           <div className={styles.promotionsPhotos}>
-            {promotions.map((item, index) => (
+            {promotions?.map((item, index) => (
               <a
                 href={item.link}
                 target="_blank"
