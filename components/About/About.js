@@ -88,7 +88,8 @@ const About = () => {
         </div>
       </div>
 
-      <div className={styles.facts}>
+      {/* facts for mobile */}
+      <div className={`${styles.facts} ${styles.facts1}`}>
         <div className={styles.factsItem} data-scroll data-scroll-speed="4">
           <img src="/green-milkshake.png" alt="green milkshake" />
           <h3>DELIVERS 45 MIN TO 1 HOUR</h3>
@@ -100,6 +101,36 @@ const About = () => {
           <p>{`Standard Shipment Rates Apply`}</p>
         </div>
         <div className={styles.factsItem} data-scroll data-scroll-speed="0">
+          <img src="/purple-milkshake.png" alt="purple milkshake" />
+          <h3>WE ACCEPT MANY MODES OF PAYMENT</h3>
+          <p>{`Cash on delivery | Gcash | Over the counter`}</p>
+        </div>
+      </div>
+
+      {/* facts for desktop */}
+
+      <div className={`${styles.facts} ${styles.facts2}`}>
+        <div
+          className={styles.factsItem}
+          data-scroll
+          data-scroll-speed="1"
+          data-scroll-direction="horizontal"
+        >
+          <img src="/green-milkshake.png" alt="green milkshake" />
+          <h3>DELIVERS 45 MIN TO 1 HOUR</h3>
+          <p>{`We practice no contact delivery for our customer's safety`}</p>
+        </div>
+        <div className={styles.factsItem} data-scroll>
+          <img src="/orange-milkshake.png" alt="orange milkshake" />
+          <h3>WE DELIVER ACROSS BUTUAN CITY</h3>
+          <p>{`Standard Shipment Rates Apply`}</p>
+        </div>
+        <div
+          className={styles.factsItem}
+          data-scroll
+          data-scroll-speed="-1"
+          data-scroll-direction="horizontal"
+        >
           <img src="/purple-milkshake.png" alt="purple milkshake" />
           <h3>WE ACCEPT MANY MODES OF PAYMENT</h3>
           <p>{`Cash on delivery | Gcash | Over the counter`}</p>

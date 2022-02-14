@@ -219,6 +219,18 @@
     margin-block: 200px 250px;
   }
 
+  &1 {
+    @media only screen and (min-width: 900px) {
+      display: none;
+    }
+  }
+
+  &2 {
+    @media only screen and (max-width: 900px) {
+      display: none;
+    }
+  }
+
   &Item {
     display: grid;
     grid-template-columns: 63.32px 1fr;
