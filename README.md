@@ -12,7 +12,7 @@
   👉🏻<a href="https://www.gravitea-shop.com/" target="_blank">Click here</a> to see the live site.
 </p>
 <br/>
-<a href="https://gravitea.vercel.app" target="_blank"><img alt="Logo" src="https://imageupload.io/ib/JT7RgoJ45eVr5kb_1698672160.png" width="100%" /></a>
+<a href="https://www.gravitea-shop.com/" target="_blank"><img alt="Logo" src="https://imageupload.io/ib/JT7RgoJ45eVr5kb_1698672160.png" width="100%" /></a>
 
 
 ## 🌐 Technology Stack
